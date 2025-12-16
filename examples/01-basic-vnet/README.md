@@ -43,6 +43,12 @@ These outputs are used in later examples as building blocks.
 
 ## 🖼️ Azure Portal View
 
+
+Below you can see the resulting Virtual Network and subnet
+as displayed in the Azure Portal:
+
+<img src="01-basic-vnet-portal-subnets.png" width="900"/>
+
 After deployment, you should see:
 - A single VNet with one subnet in the Azure Portal
 - No additional networking components attached
