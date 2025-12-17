@@ -71,7 +71,7 @@ kubectl get nodes
 <img src="03-aks-minimal-portal-networking.png" width="900"/>
 
 After deployment, you should see:
-- An AKS cluster (`fk-aks-demo`) integrated with an existing Virtual Network
+- An AKS cluster (`fk-aks-demo`) integrated with an existing Virtual Network (`fk-vnet-aks`)
 - The cluster deployed into a dedicated subnet (`fk-subnet-aks`)
 - No ingress controller or additional platform integrations enabled
 
