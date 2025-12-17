@@ -49,7 +49,7 @@ terraform-az-fk-vnet/
 │   ├── 01-basic-vnet/
 │   ├── 02-vnet-with-subnets/
 │   ├── 03-aks-minimal/
-│   ├── 04-private-endpoints-ready/
+│   ├── 04-private-endpoints/
 │   └── README.md
 ├── main.tf
 ├── variables.tf
