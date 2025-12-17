@@ -18,6 +18,18 @@ variable "acr_name" {
   default = "fkacrprivate"
 }
 
+variable "acr_sku" {
+  type        = string
+  description = "ACR SKU (Basic, Standard, Premium). Premium required for Private Endpoint."
+  default     = "Basic"
+}
+
+variable "enable_acr_private_endpoint" {
+  type        = bool
+  description = "Enable Private Endpoint for ACR (requires Premium SKU)"
+  default     = false
+}
+
 variable "tags" {
   type    = map(string)
   default = {

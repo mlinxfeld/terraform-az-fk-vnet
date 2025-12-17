@@ -1,9 +1,10 @@
 resource "azurerm_private_endpoint" "fk_acr_pe" {
+  count               = var.enable_acr_private_endpoint ? 1 : 0
   name                = "fk_acr_pe"
   location            = azurerm_resource_group.foggykitchen_rg.location
   resource_group_name = azurerm_resource_group.foggykitchen_rg.name
 
-  subnet_id = module.vnet.subnet_ids["private-endpoints"]
+  subnet_id = module.vnet.subnet_ids["fk-subnet-private-endpoints"]
 
   private_service_connection {
     name                           = "fk_acr_connection"
