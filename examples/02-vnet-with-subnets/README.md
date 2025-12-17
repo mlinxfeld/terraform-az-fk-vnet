@@ -49,12 +49,18 @@ These outputs are reused in later examples as building blocks.
 
 ## 🖼️ Azure Portal View
 
-After deployment, you should see:
-- One VNet with multiple subnets
-- A Service Endpoint enabled on the `fk-subnet-private` subnet
-- No compute or platform services yet attached
+<img src="02-vnet-with-subnets-portal.png" width="900"/>
 
-This example focuses purely on **network topology and intent**.
+After deployment, you should see:
+- One Virtual Network with multiple subnets:
+  - `fk-subnet-public`
+  - `fk-subnet-private`
+  - `fk-subnet-apps`
+- Each subnet assigned its own CIDR block
+- No compute or platform services deployed yet
+
+This view highlights the **logical network structure** created in this example,
+before any workloads or platform services are introduced.
 
 ---
 
