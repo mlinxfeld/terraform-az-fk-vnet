@@ -1,5 +1,5 @@
 module "vnet" {
-  source = "git::https://github.com/mlinxfeld/terraform-az-fk-vnet.git?ref=v0.1.0"
+  source = "git::https://github.com/mlinxfeld/terraform-az-fk-vnet.git?ref=v0.1.1"
 
   name                = var.vnet_name
   location            = azurerm_resource_group.foggykitchen_rg.location

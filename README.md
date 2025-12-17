@@ -67,7 +67,7 @@ All examples are runnable and demonstrate **incremental network design**, from t
 
 ```hcl
 module "vnet" {
-  source = "git::https://github.com/mlinxfeld/terraform-az-fk-vnet.git?ref=v0.1.0"
+  source = "git::https://github.com/mlinxfeld/terraform-az-fk-vnet.git?ref=v0.1.1"
 
   name                = "fk-vnet-demo"
   location            = "westeurope"
