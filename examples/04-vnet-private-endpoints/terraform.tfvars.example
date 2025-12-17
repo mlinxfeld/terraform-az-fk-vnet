@@ -2,3 +2,4 @@ resource_group_name = "fk-aks-demo-rg"
 location = "westeurope"
 enable_acr_private_endpoint = true
 acr_sku= "Premium"
+enable_private_dns = true

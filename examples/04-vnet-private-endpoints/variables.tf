@@ -30,6 +30,12 @@ variable "enable_acr_private_endpoint" {
   default     = false
 }
 
+variable "enable_private_dns" {
+  type        = bool
+  description = "Create and link Private DNS zone for ACR Private Endpoint (privatelink.azurecr.io)"
+  default     = true
+}
+
 variable "tags" {
   type    = map(string)
   default = {
