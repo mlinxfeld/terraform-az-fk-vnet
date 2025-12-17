@@ -66,6 +66,20 @@ kubectl get nodes
 
 ---
 
+## 🖼️ Azure Portal View
+
+<img src="03-aks-minimal-portal-networking.png" width="900"/>
+
+After deployment, you should see:
+- An AKS cluster (`fk-aks-demo`) integrated with an existing Virtual Network
+- The cluster deployed into a dedicated subnet (`fk-subnet-aks`)
+- No ingress controller or additional platform integrations enabled
+
+This view confirms that the AKS cluster is correctly **anchored inside the VNet**,
+forming a clean foundation for further networking and security extensions.
+
+---
+
 ## 🧹 Cleanup
 
 To remove all resources created by this example:

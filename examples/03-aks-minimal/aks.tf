@@ -6,6 +6,8 @@ module "aks" {
   
   vnet_id   = module.vnet.vnet_id
   subnet_id = module.vnet.subnet_ids["fk-subnet-aks"]
+  
+  network_plugin = "kubenet"
 
   tags = var.tags
 }
