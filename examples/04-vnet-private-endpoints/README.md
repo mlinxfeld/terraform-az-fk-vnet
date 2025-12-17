@@ -13,6 +13,8 @@ This example intentionally focuses on **networking mechanics**, not application 
 
 ## 🧭 Architecture Overview
 
+<img src="04-vnet-private-endpoints.png" width="900"/>
+
 This deployment creates:
 
 - A dedicated **Virtual Network** (`fk-vnet-aks`)
