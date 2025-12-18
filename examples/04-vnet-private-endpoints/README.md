@@ -66,7 +66,32 @@ After deployment, you should see the Azure Container Registry configured with **
 - The registry still uses the standard `*.azurecr.io` endpoint
 - No public IP exposure is required
 
-This confirms that ACR access is now handled through a private network path.
+
+The following screenshots confirm the final state of the deployment in the Azure Portal.
+They demonstrate that AKS accesses Azure Container Registry entirely via a Private Endpoint,
+with private DNS resolution and no public network exposure.
+
+### Private DNS Zone
+
+The Private DNS zone `privatelink.azurecr.io` is created and linked to the virtual network.
+This zone is required for resolving the ACR private endpoint to a private IP address.
+
+![Private DNS Zone - privatelink.azurecr.io](./04-acr-private-endpoint-dns-zone.png)
+
+### Virtual Network Link
+
+The Private DNS zone is explicitly linked to the AKS virtual network (`fk-vnet-aks`),
+allowing workloads inside the VNet to resolve ACR private endpoints correctly.
+
+![Private DNS Zone - Virtual Network Link](./04-acr-private-endpoint-dns-link.png)
+
+### DNS Recordsets (Private Resolution)
+
+Azure automatically creates A records inside the Private DNS zone for the ACR private endpoint.
+These records map the registry hostname to private IP addresses from the
+`fk-subnet-private-endpoints` subnet.
+
+![Private DNS Zone - Recordsets](./04-acr-private-endpoint-recordsets.png)
 
 ---
 
