@@ -55,9 +55,9 @@ After the deployment completes, AKS and ACR are fully provisioned and connected 
 
 ---
 
-## 🖼️ Azure Portal View – Private Access
+## 🖼️ Azure Portal View - ACR
 
-<img src="04-acr-private-endpoint-portal.png" width="900"/>
+### Azure Container Registry Private Access
 
 After deployment, you should see the Azure Container Registry configured with **Private access**.
 
@@ -66,6 +66,11 @@ After deployment, you should see the Azure Container Registry configured with **
 - The registry still uses the standard `*.azurecr.io` endpoint
 - No public IP exposure is required
 
+<img src="04-acr-private-endpoint-portal.png" width="900"/>
+
+---
+
+## 🖼️ Azure Portal View - Private Endpoint
 
 The following screenshots confirm the final state of the deployment in the Azure Portal.
 They demonstrate that AKS accesses Azure Container Registry entirely via a Private Endpoint,
