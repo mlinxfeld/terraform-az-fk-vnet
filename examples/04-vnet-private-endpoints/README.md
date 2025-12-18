@@ -100,9 +100,7 @@ These records map the registry hostname to private IP addresses from the
 
 ---
 
-## 🌐 Private Endpoint DNS Resolution
-
-<img src="04-acr-private-endpoint-dns.png" width="900"/>
+## 🖼️ Azure Portal View - Private Endpoint's DNS Resolution
 
 Private Endpoints do **not** introduce new service URLs.  
 Instead, they work by **overriding DNS resolution** for existing service FQDNs.
@@ -117,6 +115,8 @@ The screenshot below shows the DNS configuration of the Private Endpoint:
 - No public IP addresses are used
 
 This confirms that traffic to ACR is routed privately through the VNet.
+
+<img src="04-acr-private-endpoint-dns.png" width="900"/>
 
 ---
 
