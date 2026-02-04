@@ -4,7 +4,7 @@ This directory contains all progressive examples used with the **terraform-az-fk
 The examples are designed as **incremental building blocks**, starting from a minimal Azure Virtual Network
 and gradually preparing it for real-world workloads such as **AKS** and **Private Endpoints**.
 
-These examples are part of the **FoggyKitchen.com** training ecosystem and are used across Azure
+These examples are part of the **[FoggyKitchen.com training ecosystem](https://foggykitchen.com/courses-2/)** and are used across Azure
 and multicloud courses (AKS, networking, Private Endpoints, and beyond).
 
 ---
@@ -63,6 +63,11 @@ These examples intentionally avoid:
 ## 🧩 Related Resources
 
 - [FoggyKitchen Azure VNet Module (terraform-az-fk-vnet)](../)
+- [FoggyKitchen Azure NSG Module (terraform-az-fk-nsg)](https://github.com/mlinxfeld/terraform-az-fk-nsg)
+- [FoggyKitchen Azure Load Balancer Module (terraform-az-fk-loadbalancer)](https://github.com/mlinxfeld/terraform-az-fk-loadbalancer)
+- [FoggyKitchen Azure Compute Module (terraform-az-fk-compute)](https://github.com/mlinxfeld/terraform-az-fk-compute)
+- [FoggyKitchen Azure Disk Module (terraform-az-fk-disk)](https://github.com/mlinxfeld/terraform-az-fk-disk)
+- [FoggyKitchen Azure Storage Module (terraform-az-fk-storage)](https://github.com/mlinxfeld/terraform-az-fk-storage)
 - [FoggyKitchen AKS Module (terraform-az-fk-aks)](https://github.com/mlinxfeld/terraform-az-fk-aks)
 - [OCI OKE Module (terraform-oci-fk-oke)](https://github.com/mlinxfeld/terraform-oci-fk-oke)
 
@@ -76,4 +81,3 @@ See [LICENSE](../LICENSE) for details.
 ---
 
 © 2025 [FoggyKitchen.com](https://foggykitchen.com) — *Cloud. Code. Clarity.*
-

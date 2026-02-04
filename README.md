@@ -2,7 +2,7 @@
 
 This repository contains a reusable **Terraform/OpenTofu module** and progressive examples for deploying an **Azure Virtual Network (VNet)** with **subnets**, designed for real-world cloud architectures and hands-on learning.
 
-It is part of the **FoggyKitchen.com** training ecosystem and serves as a foundational building block for Azure and multicloud courses, including AKS, Private Endpoints, and advanced networking scenarios.
+It is part of the **[FoggyKitchen.com training ecosystem](https://foggykitchen.com/courses-2/)** and serves as a foundational building block for Azure and multicloud courses, including AKS, Private Endpoints, and advanced networking scenarios.
 
 ---
 
@@ -132,6 +132,8 @@ subnets = map(object({
 | `vnet_id` | VNet resource ID |
 | `vnet_name` | VNet name |
 | `subnet_ids` | Map of subnet name → subnet ID |
+| `subnet_address_prefixes` | Map of subnet name → list of CIDR prefixes |
+| `subnets` | Map of subnet name → subnet attributes (id, name, address_prefixes) |
 
 ---
 
@@ -170,5 +172,4 @@ See [LICENSE](LICENSE) for details.
 
 ---
 
-© 2025 [FoggyKitchen.com](https://foggykitchen.com) — *Cloud. Code. Clarity.*
-
+© 2026 [FoggyKitchen.com](https://foggykitchen.com/courses-2/) — *Cloud. Code. Clarity.*
