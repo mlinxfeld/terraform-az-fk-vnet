@@ -3,5 +3,5 @@ output "subnet_ids" {
 }
 
 output "acr_private_endpoint_ip" {
-  value = var.enable_acr_private_endpoint ? azurerm_private_endpoint.fk_acr_pe[0].private_service_connection[0].private_ip_address : null
+  value = var.enable_acr_private_endpoint && length(module.private_endpoint_acr[0].private_ip_addresses) > 0 ? module.private_endpoint_acr[0].private_ip_addresses[0] : null
 }
