@@ -1,22 +1,20 @@
 # Optional: Private DNS for ACR Private Endpoint
 # ACR Private Link uses: privatelink.azurecr.io
 
-resource "azurerm_private_dns_zone" "foggykitchen_acr_dns_zone" {
-  count               = var.enable_acr_private_endpoint && var.enable_private_dns ? 1 : 0
-  name                = "privatelink.azurecr.io"
-  resource_group_name = azurerm_resource_group.foggykitchen_rg.name
+module "private_dns" {
+  source = "github.com/mlinxfeld/terraform-az-fk-private-dns"
+  count  = var.enable_acr_private_endpoint && var.enable_private_dns ? 1 : 0
 
-  tags = var.tags
-}
+  resource_group_name    = azurerm_resource_group.foggykitchen_rg.name
+  private_dns_zone_names = ["privatelink.azurecr.io"]
+  tags                   = var.tags
 
-resource "azurerm_private_dns_zone_virtual_network_link" "foggykitchen_acr_dns_zone_link" {
-  count                 = var.enable_acr_private_endpoint && var.enable_private_dns ? 1 : 0
-  name                  = "acr-dns-link"
-  resource_group_name   = azurerm_resource_group.foggykitchen_rg.name
-  private_dns_zone_name = azurerm_private_dns_zone.foggykitchen_acr_dns_zone[0].name
-  virtual_network_id    = module.vnet.vnet_id
-
-  tags = var.tags
+  vnet_links = {
+    "acr-dns-link" = {
+      vnet_id              = module.vnet.vnet_id
+      registration_enabled = false
+    }
+  }
 }
 
 module "private_endpoint_acr" {
@@ -33,11 +31,11 @@ module "private_endpoint_acr" {
   is_manual_connection           = false
 
   private_dns_zone_group_name = "acr-dns-zone-group"
-  private_dns_zone_ids        = var.enable_private_dns ? [azurerm_private_dns_zone.foggykitchen_acr_dns_zone[0].id] : []
+  private_dns_zone_ids        = var.enable_private_dns ? [module.private_dns[0].private_dns_zone_ids["privatelink.azurecr.io"]] : []
 
   tags = var.tags
 
   depends_on = [
-    azurerm_private_dns_zone_virtual_network_link.foggykitchen_acr_dns_zone_link
+    module.private_dns
   ]
 }
