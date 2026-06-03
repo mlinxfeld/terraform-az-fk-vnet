@@ -6,6 +6,8 @@ It is part of the **[FoggyKitchen.com training ecosystem](https://foggykitchen.c
 
 This module is also part of the **[Azure Fundamentals with Terraform/OpenTofu — Build Real-World Azure Architectures with Reusable Modules (2026 Edition)](https://foggykitchen.com/courses/azure-fundamentals-terraform-course/)** course. In the training, it is used as the base networking layer for workloads, private connectivity, and secure access patterns built throughout the labs.
 
+Support expectations are documented in [SUPPORT.md](SUPPORT.md).
+
 ---
 
 ## 🎯 Purpose
